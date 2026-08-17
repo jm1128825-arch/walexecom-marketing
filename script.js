@@ -1,12 +1,6 @@
-/* =========================================================
-   WALEXECOM — TELEGRAM MARKETING WEBSITE
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       MOBILE MENU
-       ===================================================== */
+    /* ================= MOBILE MENU ================= */
 
     const menuBtn = document.getElementById("menuBtn");
     const nav = document.getElementById("nav");
@@ -14,30 +8,29 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuBtn && nav) {
 
         menuBtn.addEventListener("click", () => {
+
             nav.classList.toggle("active");
 
             if (nav.classList.contains("active")) {
+
                 menuBtn.textContent = "✕";
-                menuBtn.setAttribute("aria-label", "Close menu");
+
             } else {
+
                 menuBtn.textContent = "☰";
-                menuBtn.setAttribute("aria-label", "Open menu");
+
             }
+
         });
 
 
-        /* Close mobile menu when a link is clicked */
-
-        const navLinks = nav.querySelectorAll("a");
-
-        navLinks.forEach((link) => {
+        nav.querySelectorAll("a").forEach((link) => {
 
             link.addEventListener("click", () => {
 
                 nav.classList.remove("active");
 
                 menuBtn.textContent = "☰";
-                menuBtn.setAttribute("aria-label", "Open menu");
 
             });
 
@@ -46,54 +39,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       FAQ ACCORDION
-       ===================================================== */
+    /* ================= FAQ ================= */
 
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach((item) => {
 
-        const question = item.querySelector(".faq-question");
-        const answer = item.querySelector(".faq-answer");
+        const question =
+            item.querySelector(".faq-question");
+
+        const answer =
+            item.querySelector(".faq-answer");
 
         if (!question || !answer) return;
 
         question.addEventListener("click", () => {
 
-            const isOpen = item.classList.contains("active");
+            const currentlyOpen =
+                item.classList.contains("active");
 
-
-            /* Close all other FAQ items */
 
             faqItems.forEach((otherItem) => {
 
-                if (otherItem !== item) {
+                otherItem.classList.remove("active");
 
-                    otherItem.classList.remove("active");
+                const otherAnswer =
+                    otherItem.querySelector(".faq-answer");
 
-                    const otherAnswer =
-                        otherItem.querySelector(".faq-answer");
-
-                    if (otherAnswer) {
-                        otherAnswer.style.maxHeight = null;
-                    }
-
+                if (otherAnswer) {
+                    otherAnswer.style.maxHeight = null;
                 }
 
             });
 
 
-            /* Toggle selected FAQ */
-
-            if (isOpen) {
-
-                item.classList.remove("active");
-                answer.style.maxHeight = null;
-
-            } else {
+            if (!currentlyOpen) {
 
                 item.classList.add("active");
+
                 answer.style.maxHeight =
                     answer.scrollHeight + "px";
 
@@ -104,25 +87,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       CURRENT YEAR
-       ===================================================== */
+    /* ================= YEAR ================= */
 
-    const yearElement = document.getElementById("year");
+    const year = document.getElementById("year");
 
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+    if (year) {
+        year.textContent = new Date().getFullYear();
     }
 
 
-    /* =====================================================
-       SMOOTH SCROLL
-       ===================================================== */
+    /* ================= SMOOTH SCROLL ================= */
 
-    const internalLinks =
-        document.querySelectorAll('a[href^="#"]');
-
-    internalLinks.forEach((link) => {
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
         link.addEventListener("click", (event) => {
 
@@ -148,13 +124,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const headerHeight =
                 header ? header.offsetHeight : 0;
 
-            const targetPosition =
+            const position =
                 target.getBoundingClientRect().top +
                 window.scrollY -
                 headerHeight;
 
             window.scrollTo({
-                top: targetPosition,
+                top: position,
                 behavior: "smooth"
             });
 
@@ -163,35 +139,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       TELEGRAM ORDER BUTTONS
-       ===================================================== */
+    /* ================= OUTSIDE MENU CLICK ================= */
 
-    const telegramLinks =
-        document.querySelectorAll(
-            'a[href*="t.me/WalexEcom"]'
-        );
+    document.addEventListener("click", (event) => {
 
-    telegramLinks.forEach((link) => {
+        if (!nav || !menuBtn) return;
 
-        link.addEventListener("click", () => {
+        if (
+            nav.classList.contains("active") &&
+            !nav.contains(event.target) &&
+            !menuBtn.contains(event.target)
+        ) {
 
-            console.log(
-                "Opening WalexEcom Telegram contact..."
-            );
+            nav.classList.remove("active");
 
-        });
+            menuBtn.textContent = "☰";
+
+        }
 
     });
 
 
-    /* =====================================================
-       SCROLL REVEAL
-       ===================================================== */
+    /* ================= ESCAPE MENU ================= */
 
-    const revealElements = document.querySelectorAll(
-        ".service-card, .pricing-card, .step, .about-box, .contact-card"
-    );
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            if (nav) {
+                nav.classList.remove("active");
+            }
+
+            if (menuBtn) {
+                menuBtn.textContent = "☰";
+            }
+
+        }
+
+    });
+
+
+    /* ================= SCROLL ANIMATION ================= */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".service-card, .benefit-card, .package-card, .process-card, .about-box"
+        );
+
 
     if ("IntersectionObserver" in window) {
 
@@ -203,9 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (entry.isIntersecting) {
 
-                            entry.target.style.opacity = "1";
-                            entry.target.style.transform =
-                                "translateY(0)";
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
                             observerInstance.unobserve(
                                 entry.target
@@ -222,12 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-        revealElements.forEach((element) => {
-
-            element.style.opacity = "0";
-            element.style.transform = "translateY(25px)";
-            element.style.transition =
-                "opacity 0.6s ease, transform 0.6s ease";
+        animatedElements.forEach((element) => {
 
             observer.observe(element);
 
@@ -236,73 +225,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
-       ===================================================== */
+    /* ================= TELEGRAM ================= */
 
-    document.addEventListener("click", (event) => {
+    document.querySelectorAll(
+        'a[href*="t.me/WalexEcom"]'
+    ).forEach((link) => {
 
-        if (!nav || !menuBtn) return;
+        link.addEventListener("click", () => {
 
-        const clickedInsideNav =
-            nav.contains(event.target);
-
-        const clickedMenuButton =
-            menuBtn.contains(event.target);
-
-        if (
-            nav.classList.contains("active") &&
-            !clickedInsideNav &&
-            !clickedMenuButton
-        ) {
-
-            nav.classList.remove("active");
-
-            menuBtn.textContent = "☰";
-            menuBtn.setAttribute(
-                "aria-label",
-                "Open menu"
+            console.log(
+                "Opening WalexEcom on Telegram..."
             );
 
-        }
+        });
 
     });
 
-
-    /* =====================================================
-       ESCAPE KEY CLOSES MOBILE MENU
-       ===================================================== */
-
-    document.addEventListener("keydown", (event) => {
-
-        if (event.key === "Escape") {
-
-            if (nav) {
-                nav.classList.remove("active");
-            }
-
-            if (menuBtn) {
-
-                menuBtn.textContent = "☰";
-
-                menuBtn.setAttribute(
-                    "aria-label",
-                    "Open menu"
-                );
-
-            }
-
-        }
-
-    });
-
-
-    /* =====================================================
-       CONSOLE MESSAGE
-       ===================================================== */
 
     console.log(
-        "🚀 WalexEcom Marketing Website Loaded Successfully."
+        "🚀 WalexEcom website loaded successfully."
     );
 
 });
