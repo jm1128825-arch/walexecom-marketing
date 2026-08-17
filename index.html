@@ -1,1 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>WalexEcom | Telegram Marketing</title>
+
+<meta name="description" content="WalexEcom provides Telegram marketing, advertising and promotion services.">
+<meta name="theme-color" content="#030507">
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+:root{
+    --black:#030507;
+    --black2:#070b11;
+    --card:#0a1018;
+    --gold:#ffd21a;
+    --gold2:#ffb800;
+    --blue:#229ed9;
+    --white:#ffffff;
+    --muted:#aab6c4;
+    --line:#29333d;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(255,200,0,.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            #020304,
+            #05080d 50%,
+            #020304
+        );
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1180px;
+    margin:auto;
+}
+
+/* NAVIGATION */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(2,4,7,.95);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,210,26,.15);
+}
+
+.nav{
+    min-height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.brand img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+.brand-name{
+    font-size:19px;
+    font-weight:900;
+}
+
+.brand-name span{
+    color:var(--gold);
+}
+
+.brand-sub{
+    display:block;
+    color:#c6ccd4;
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+    color:#c3ccd6;
+    font-size:14px;
+}
+
+.menu a:hover{
+    color:var(--gold);
+}
+
+.nav-button{
+    padding:11px 18px;
+    border-radius:10px;
+    background:linear-gradient(
+        180deg,
+        #ffdd36,
+        #ffb800
+    );
+    color:#111;
+    font-weight:900;
+}
+
+/* BUTTONS */
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    min-height:45px;
+    border-radius:10px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.button-gold{
+    background:linear-gradient(
+        180deg,
+        #ffdf37,
+        #ffb800
+    );
+    color:#111;
+    box-shadow:0 10px 30px rgba(255,190,0,.18);
+}
+
+.button-gold:hover{
+    transform:translateY(-2px);
+}
+
+.button-dark{
+    border:1px solid rgba(255,210,26,.5);
+    background:#080d14;
+}
+
+.button-dark:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+    padding:80px 0 55px;
+    border-bottom:1px solid rgba(255,210,26,.12);
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 13px;
+    border:1px solid rgba(255,210,26,.45);
+    border-radius:30px;
+    background:rgba(255,210,26,.04);
+    color:#f3df7b;
+    font-size:12px;
+    font-weight:800;
+}
+
+.telegram-icon{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--blue);
+}
+
+.hero h1{
+    font-size:clamp(43px,6vw,70px);
+    line-height:1;
+    letter-spacing:-2px;
+    margin:18px 0;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-text{
+    max-width:650px;
+    color:#d0d8e0;
+    font-size:17px;
+}
+
+.hero-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin:22px 0;
+}
+
+.pill{
+    border:1px solid rgba(34,158,217,.28);
+    background:rgba(34,158,217,.07);
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:800;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+    min-height:420px;
+    position:relative;
+    display:grid;
+    place-items:center;
+}
+
+.glow{
+    position:absolute;
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,210,0,.25),
+            transparent 68%
+        );
+    filter:blur(25px);
+}
+
+.hero-logo{
+    position:relative;
+    z-index:2;
+    width:min(390px,88%);
+    filter:drop-shadow(
+        0 20px 45px rgba(255,185,0,.28)
+    );
+}
+
+.phone{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:180px;
+    height:325px;
+    border:6px solid #172631;
+    border-radius:29px;
+    overflow:hidden;
+    background:#07111b;
+    transform:rotate(7deg);
+    box-shadow:0 25px 50px rgba(0,0,0,.6);
+    z-index:3;
+}
+
+.phone-top{
+    padding:15px;
+    background:linear-gradient(
+        #229ed9,
+        #176b99
+    );
+}
+
+.phone-screen{
+    padding:10px;
+}
+
+.phone-card{
+    margin:8px 0;
+    padding:9px;
+    background:#0c1926;
+    border:1px solid #234056;
+    border-radius:8px;
+    font-size:10px;
+    color:#9eb0bf;
+}
+
+.phone-card strong{
+    display:block;
+    color:#fff;
+    font-size:15px;
+}
+
+.floating{
+    position:absolute;
+    z-index:4;
+    padding:10px 13px;
+    border:1px solid rgba(255,210,26,.45);
+    border-radius:11px;
+    background:#09131f;
+    box-shadow:0 15px 35px rgba(0,0,0,.5);
+    font-size:11px;
+    font-weight:900;
+}
+
+.float-one{
+    top:25px;
+    left:0;
+}
+
+.float-two{
+    bottom:35px;
+    left:5%;
+}
+
+.float-three{
+    top:60px;
+    right:0;
+}
+
+/* TRUST */
+
+.trustbar{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,210,26,.12);
+    background:#050910;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.trust{
+    padding:11px;
+    text-align:center;
+    border:1px solid rgba(34,158,217,.22);
+    border-radius:11px;
+    color:#d3dce5;
+    font-size:11px;
+    font-weight:800;
+}
+
+.trust-icon{
+    display:block;
+    color:var(--gold);
+    font-size:18px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:82px 0;
+}
+
+.section-label{
+    text-align:center;
+    color:#f0d756;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:11px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    line-height:1.15;
+}
+
+.section-title span{
+    color:var(--gold);
+}
+
+.section-description{
+    max-width:730px;
+    margin:10px auto 38px;
+    text-align:center;
+    color:var(--muted);
+}
+
+/* ADS */
+
+.ads-section{
+    background:#04080e;
+}
+
+.ads-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.ad-card{
+    display:flex;
+    flex-direction:column;
+    min-height:340px;
+    padding:24px;
+    border:1px solid #2b343d;
+    border-radius:18px;
+    background:
+        linear-gradient(
+            145deg,
+            #0a121c,
+            #060c14
+        );
+    transition:.25s;
+}
+
+.ad-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold);
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+
+.ad-icon{
+    width:50px;
+    height:50px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:#229ed918;
+    font-size:26px;
+    margin-bottom:13px;
+}
+
+.ad-badge{
+    display:inline-block;
+    width:max-content;
+    background:#e71928;
+    border-radius:6px;
+    padding:4px 7px;
+    font-size:9px;
+    font-weight:900;
+    margin-bottom:9px;
+}
+
+.ad-card h3{
+    font-size:19px;
+    line-height:1.25;
+}
+
+.ad-card p{
+    color:#aab6c4;
+    font-size:13px;
+    margin:9px 0;
+    flex:1;
+}
+
+.price{
+    border-top:1px solid #26323e;
+    padding-top:13px;
+    margin-top:10px;
+}
+
+.price small{
+    display:block;
+    color:#8798a9;
+}
+
+.price strong{
+    display:block;
+    color:var(--gold);
+    font-size:28px;
+}
+
+.order-button{
+    margin-top:14px;
+    text-align:center;
+    padding:11px;
+    border-radius:9px;
+    background:linear-gradient(
+        180deg,
+        #ffdd35,
+        #ffb800
+    );
+    color:#111;
+    font-weight:900;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service-card{
+    display:block;
+    padding:26px;
+    border:1px solid #26313a;
+    border-radius:17px;
+    background:#08101a;
+    transition:.25s;
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+}
+
+.service-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.service-card h3{
+    margin-bottom:7px;
+}
+
+.service-card p{
+    color:#aab6c4;
+    font-size:14px;
+}
+
+/* WHY */
+
+.why{
+    background:#050a10;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.why-logo{
+    width:76%;
+    margin:auto;
+    display:block;
+    filter:drop-shadow(
+        0 12px 28px rgba(255,190,0,.2)
+    );
+}
+
+.why-text h2{
+    font-size:42px;
+}
+
+.why-text h2 span{
+    color:var(--gold);
+}
+
+.why-text p{
+    color:var(--muted);
+    margin:10px 0 20px;
+}
+
+.why-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.why-item{
+    padding:11px;
+    border:1px solid #25313b;
+    border-radius:10px;
+    background:#09111b;
+    font-size:13px;
+}
+
+.why-item b{
+    color:var(--gold);
+}
+
+/* STEPS */
+
+.steps{
+    max-width:850px;
+    margin:auto;
+    border:1px solid #26313a;
+    border-radius:17px;
+    overflow:hidden;
+    background:#08101a;
+}
+
+.step{
+    display:flex;
+    gap:18px;
+    padding:23px;
+    border-bottom:1px solid #26313a;
+}
+
+.step:last-child{
+    border-bottom:0;
+}
+
+.step-number{
+    min-width:42px;
+    height:42px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--gold);
+    color:#111;
+    font-weight:900;
+}
+
+.step p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* REVIEWS */
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    padding:24px;
+    border:1px solid #25313c;
+    border-radius:18px;
+    background:#08101a;
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.review p{
+    color:#b4bfcb;
+    font-size:14px;
+}
+
+/* FAQ */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    margin-bottom:12px;
+    border:1px solid #25313c;
+    border-radius:12px;
+    background:#08101a;
+    overflow:hidden;
+}
+
+summary{
+    padding:17px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+details p{
+    padding:0 17px 17px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:65px 25px;
+    border:1px solid rgba(255,210,26,.32);
+    border-radius:24px;
+    background:#070d14;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.cta h2 span{
+    color:var(--gold);
+}
+
+.cta p{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+/* FLOATING TELEGRAM */
+
+.floating-telegram{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:1000;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--blue);
+    box-shadow:
+        0 12px 35px rgba(34,158,217,.35);
+    font-size:26px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,210,26,.13);
+    padding:30px 0;
+    color:#8d9cac;
+    font-size:13px;
+    background:#020508;
+}
+
+.footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.footer-brand img{
+    width:43px;
+    height:43px;
+    object-fit:contain;
+}
+
+.footer-brand strong{
+    color:#fff;
+}
+
+.footer-brand span{
+    color:var(--gold);
+}
+
+.footer-link{
+    color:#42bdf2;
+    font-weight:800;
+}
+
+/* TABLET */
+
+@media(max-width:950px){
+
+    .menu{
+        display:none;
+    }
+
+    .hero-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ads-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trust-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:620px){
+
+    .brand-sub{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .ads-grid,
+    .services,
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-logo{
+        width:300px;
+    }
+
+    .phone{
+        width:145px;
+        height:275px;
+        right:-2px;
+    }
+
+    .floating{
+        font-size:10px;
+        padding:9px 10px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .why-text h2{
+        font-size:34px;
+    }
+
+    .why-list{
+        grid-template-columns:1fr;
+    }
+
+    .cta h2{
+        font-size:31px;
+    }
+
+    .floating-telegram{
+        width:55px;
+        height:55px;
+        right:15px;
+        bottom:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+<div class="container nav">
+
+<a href="#home" class="brand">
+<img src="logo.png" alt="WalexEcom Logo">
+
+<div>
+<div class="brand-name">
+Walex<span>Ecom</span>
+</div>
+
+<span class="brand-sub">
+Marketing
+</span>
+</div>
+</a>
+
+<div class="menu">
+<a href="#home">Home</a>
+<a href="#telegram-ads">Telegram Ads</a>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</div>
+
+<a
+href="https://t.me/WalexEcom"
+target="_blank"
+class="nav-button"
+>
+💬 Message Now
+</a>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="hero-tag">
+<span class="telegram-icon">➤</span>
+Telegram Marketing
+</div>
+
+<h1>
+Grow Your
+<span>Telegram</span>
+Project
+</h1>
+
+<p class="hero-text">
+WalexEcom helps Telegram bots, channels, Mini Apps,
+communities and digital projects reach more people
+through professional marketing and advertising services.
+</p>
+
+<div class="hero-pills">
+
+<div class="pill">✓ Telegram Ads</div>
+<div class="pill">✓ Bot Promotion</div>
+<div class="pill">✓ Channel Promotion</div>
+<div class="pill">✓ Mini App Promotion</div>
+<div class="pill">✓ Web3 Marketing</div>
+
+</div>
+
+<div class="hero-buttons">
+
+<a
+href="#telegram-ads"
+class="button button-gold"
+>
+View Services
+</a>
+
+<a
+href="https://t.me/WalexEcom"
+target="_blank"
+class="button button-dark"
+>
+➤ Contact @WalexEcom
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual">
+
+<div class="glow"></div>
+
+<img
+src="logo.png"
+alt="WalexEcom"
+class="hero-logo"
+>
+
+<div class="floating float-one">
+⚡ Fast Communication
+</div>
+
+<div class="floating float-two">
+🎯 Targeted Promotion
+</div>
+
+<div class="floating float-three">
+🚀 Telegram Marketing
+</div>
+
+<div class="phone">
+
+<div class="phone-top">
+<strong>Telegram</strong>
+</div>
+
+<div class="phone-screen">
+
+<div class="phone-card">
+<strong>📢 Campaign</strong>
+Reach your target audience
+</div>
+
+<div class="phone-card">
+<strong>📈 Growth</strong>
+Increase visibility
+</div>
+
+<div class="phone-card">
+<strong>🚀 Promotion</strong>
+Grow your project
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<div class="trustbar">
+
+<div class="container trust-grid">
+
+<div class="trust">
+<span class="trust-icon">✓</span>
+Professional
+</div>
+
+<div class="trust">
+<span class="trust-icon">⚡</span>
+Fast Response
+</div>
+
+<div class="trust">
+<span class="trust-icon">🎯</span>
+Targeted
+</div>
+
+<div class="trust">
+<span class="trust-icon">🌎</span>
+Global Reach
+</div>
+
+<div class="trust">
+<span class="trust-icon">💬</span>
+Direct Support
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TELEGRAM ADS -->
+
+<section
+class="ads-section"
+id="telegram-ads"
+>
+
+<div class="container">
+
+<div class="section-label">
+Telegram Advertising
+</div>
+
+<h2 class="section-title">
+Our <span>Telegram Ads</span>
+</h2>
+
+<p class="section-description">
+Choose the service you need and contact WalexEcom
+directly on Telegram.
+</p>
+
+
+<div class="ads-grid">
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Run%20Ads%20for%20Bot."
+target="_blank"
+>
+
+<div class="ad-icon">🤖</div>
+
+<div class="ad-badge">
+POPULAR
+</div>
+
+<h3>
+Run Ads for Bot
+</h3>
+
+<p>
+Promote your Telegram bot and increase visibility
+among relevant audiences.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$25</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Run%20Ads%20for%20Channel."
+target="_blank"
+>
+
+<div class="ad-icon">📢</div>
+
+<div class="ad-badge">
+POPULAR
+</div>
+
+<h3>
+Run Ads for Channel
+</h3>
+
+<p>
+Promote your Telegram channel and increase
+visibility among relevant audiences.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$50</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Run%20Ads%20for%20Mini%20App."
+target="_blank"
+>
+
+<div class="ad-icon">📱</div>
+
+<div class="ad-badge">
+NEW
+</div>
+
+<h3>
+Run Ads for Mini App
+</h3>
+
+<p>
+Promote your Telegram Mini App and introduce it
+to interested audiences.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$40</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Sell%20Already%20Approved%20Bot."
+target="_blank"
+>
+
+<div class="ad-icon">✅</div>
+
+<h3>
+Sell Already Approved Bot
+</h3>
+
+<p>
+Service for clients with an already approved
+Telegram advertising campaign for a bot.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$70</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Sell%20Already%20Approved%20Channel."
+target="_blank"
+>
+
+<div class="ad-icon">📣</div>
+
+<h3>
+Sell Already Approved Channel
+</h3>
+
+<p>
+Service for clients with an already approved
+advertising campaign for a channel.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$100</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Sell%20Already%20Approved%20Mini%20App."
+target="_blank"
+>
+
+<div class="ad-icon">🚀</div>
+
+<h3>
+Sell Already Approved Mini App
+</h3>
+
+<p>
+Service for clients with an already approved
+advertising campaign for a Telegram Mini App.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$80</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+
+<a
+class="ad-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20an%20Automation%20Post%20Bot."
+target="_blank"
+>
+
+<div class="ad-icon">⚙️</div>
+
+<h3>
+Automation Post Bot
+</h3>
+
+<p>
+Automation post bot service for promotional
+content and Telegram channel posting.
+</p>
+
+<div class="price">
+<small>Service price</small>
+<strong>$50</strong>
+</div>
+
+<span class="order-button">
+➤ Order Now
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-label">
+More Services
+</div>
+
+<h2 class="section-title">
+More <span>Marketing Services</span>
+</h2>
+
+<p class="section-description">
+Need something beyond Telegram Ads?
+Contact us directly.
+</p>
+
+
+<div class="services">
+
+
+<a
+class="service-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Telegram%20Channel%20Growth."
+target="_blank"
+>
+
+<div class="service-icon">📈</div>
+
+<h3>
+Telegram Channel Growth
+</h3>
+
+<p>
+Promotional support designed to increase awareness
+and attract relevant audiences.
+</p>
+
+</a>
+
+
+<a
+class="service-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Targeted%20Promotion."
+target="_blank"
+>
+
+<div class="service-icon">🎯</div>
+
+<h3>
+Targeted Promotion
+</h3>
+
+<p>
+Promotion designed around your niche,
+audience, product or campaign.
+</p>
+
+</a>
+
+
+<a
+class="service-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Crypto%20and%20Web3%20Marketing."
+target="_blank"
+>
+
+<div class="service-icon">💎</div>
+
+<h3>
+Crypto & Web3 Marketing
+</h3>
+
+<p>
+Marketing support for Web3 communities,
+projects and digital campaigns.
+</p>
+
+</a>
+
+
+<a
+class="service-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Community%20Promotion."
+target="_blank"
+>
+
+<div class="service-icon">👥</div>
+
+<h3>
+Community Promotion
+</h3>
+
+<p>
+Increase awareness for your online community,
+project or initiative.
+</p>
+
+</a>
+
+
+<a
+class="service-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27m%20interested%20in%20Project%20Promotion."
+target="_blank"
+>
+
+<div class="service-icon">🚀</div>
+
+<h3>
+Project Promotion
+</h3>
+
+<p>
+Give your project a professional promotional
+push and discuss your campaign directly.
+</p>
+
+</a>
+
+
+<a
+class="service-card"
+href="https://t.me/WalexEcom?text=Hello%20WalexEcom%2C%20I%27d%20like%20to%20discuss%20a%20custom%20marketing%20campaign."
+target="_blank"
+>
+
+<div class="service-icon">💬</div>
+
+<h3>
+Custom Campaign
+</h3>
+
+<p>
+Have a different requirement?
+Contact WalexEcom and discuss your campaign.
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY WALEXECOM -->
+
+<section class="why">
+
+<div class="container why-grid">
+
+<div>
+
+<img
+src="logo.png"
+alt="WalexEcom Logo"
+class="why-logo"
+>
+
+</div>
+
+
+<div class="why-text">
+
+<div
+class="section-label"
+style="text-align:left"
+>
+Why Choose Us?
+</div>
+
+<h2>
+Why <span>WalexEcom?</span>
+</h2>
+
+<p>
+Professional communication, clear service packages,
+direct Telegram support and simple ordering.
+</p>
+
+
+<div class="why-list">
+
+<div class="why-item">
+<b>✓</b> Clear Service Packages
+</div>
+
+<div class="why-item">
+<b>✓</b> Direct Telegram Support
+</div>
+
+<div class="why-item">
+<b>✓</b> Targeted Campaign Focus
+</div>
+
+<div class="why-item">
+<b>✓</b> Global Audience Reach
+</div>
+
+<div class="why-item">
+<b>✓</b> Transparent Pricing
+</div>
+
+<div class="why-item">
+<b>✓</b> Easy Ordering
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+Simple Process
+</div>
+
+<h2 class="section-title">
+How It <span>Works</span>
+</h2>
+
+<p class="section-description">
+Choose a service and contact us directly.
+</p>
+
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<div>
+
+<h3>
+Choose Your Service
+</h3>
+
+<p>
+Select the Telegram marketing service
+that matches your project.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<div>
+
+<h3>
+Click Order Now
+</h3>
+
+<p>
+Telegram opens with your selected
+service already included.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<div>
+
+<h3>
+Send Your Project Details
+</h3>
+
+<p>
+Tell us about your bot, channel,
+Mini App or campaign.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+4
+</div>
+
+<div>
+
+<h3>
+Discuss The Campaign
+</h3>
+
+<p>
+We'll discuss your requirements
+and the next steps.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<div class="container">
+
+<div class="section-label">
+Client Reviews
+</div>
+
+<h2 class="section-title">
+What <span>Clients Say</span>
+</h2>
+
+<p class="section-description">
+Replace these example reviews with genuine customer feedback.
+</p>
+
+
+<div class="reviews">
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Professional communication and an easy
+ordering process."
+</p>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"The service was clearly explained and
+communication was straightforward."
+</p>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Quick communication and clear
+campaign details."
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-label">
+Frequently Asked Questions
+</div>
+
+<h2 class="section-title">
+<span>FAQ</span>
+</h2>
+
+
+<div class="faq">
+
+<details>
+
+<summary>
+How do I order a service?
+</summary>
+
+<p>
+Choose your service and click Order Now.
+Telegram opens with a pre-filled message
+containing the service.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+How do I contact WalexEcom?
+</summary>
+
+<p>
+You can contact us directly on Telegram at
+@WalexEcom.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Can I request a custom campaign?
+</summary>
+
+<p>
+Yes. Contact us directly and describe what
+you need.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Can I ask questions before ordering?
+</summary>
+
+<p>
+Yes. You can message us on Telegram before
+placing an order.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+Ready To <span>Grow Your Project?</span>
+</h2>
+
+<p>
+Choose a service above or message
+WalexEcom directly.
+</p>
+
+<a
+href="https://t.me/WalexEcom"
+target="_blank"
+class="button button-gold"
+>
+➤ Message WalexEcom Now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FLOATING TELEGRAM BUTTON -->
+
+<a
+href="https://t.me/WalexEcom"
+target="_blank"
+class="floating-telegram"
+aria-label="Contact WalexEcom"
+>
+➤
+</a>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer">
+
+<div class="footer-brand">
+
+<img
+src="logo.png"
+alt="WalexEcom"
+>
+
+<div>
+
+<strong>
+Walex<span>Ecom</span>
+</strong>
+
+<br>
+
+Marketing
+
+</div>
+
+</div>
+
+
+<div>
+© 2026 WalexEcom. All rights reserved.
+</div>
+
+
+<a
+href="https://t.me/WalexEcom"
+target="_blank"
+class="footer-link"
+>
+@WalexEcom
+</a>
+
+</div>
+
+</footer>
+
+</body>
+</html>
